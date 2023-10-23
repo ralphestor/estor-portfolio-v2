@@ -44,7 +44,7 @@ export default function Home() {
             <ul className="text-white flex items-center lg:items-start flex-col sm:flex-row lg:flex-col items-start gap-4">
               <li>
                 <a
-                  href="#"
+                  href="/about"
                   className="text-[16px] lg:text-[40px] xl:text-[50px] tracking-[8px] lg:tracking-[25px] font-black text-shadow homeLink-child pl-[8px] lg:pl-[25px]"
                 >
                   ABOUT
@@ -52,7 +52,7 @@ export default function Home() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/projects"
                   className="text-[16px] lg:text-[40px] xl:text-[50px] tracking-[8px] lg:tracking-[25px] font-black text-shadow homeLink-child pl-[8px] lg:pl-[25px]"
                 >
                   PROJECTS
@@ -60,7 +60,7 @@ export default function Home() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/connect"
                   className="text-[16px] lg:text-[40px] xl:text-[50px] pl-[0px] lg:pl-[25px] tracking-[8px] lg:tracking-[25px] font-black text-shadow homeLink-child pl-[8px] lg:pl-[25px]"
                 >
                   CONNECT
