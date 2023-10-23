@@ -6,7 +6,7 @@ export default function Home() {
       <header className="flex flex-row">
         <div className="absolute left-0 w-[50vw] h-[100vh] min-h-[650px] bg-[#620000]"></div>
         <div className="absolute right-0 w-[50vw] h-[100vh] min-h-[650px] bg-[#040E26]"></div>
-        <ul class="circles">
+        <ul className="circles">
           <li></li>
           <li></li>
           <li></li>
