@@ -10,17 +10,6 @@
   box-sizing: border-box;
 }
 
-.home-header-bg-red {
-  width: 50vw;
-  height: 100%;
-  background-color: #620000;
-}
-.home-header-bg-blue {
-  width: 50vw;
-  height: 100%;
-  background-color: #040E26;
-}
-
 .home-title {
   font-family: 'Montserrat', sans-serif;
 }

@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <main className="w-full h-[100vh] min-h-[650px] px-[10%]">
       <header className="flex flex-row">
-        <div className="absolute left-0 w-[50vw] h-[100vh] min-h-[650px] bg-[#620000]"></div>
-        <div className="absolute right-0 w-[50vw] h-[100vh] min-h-[650px] bg-[#040E26]"></div>
+        <div className="absolute left-0 w-[50vw] h-[100vh] min-h-[650px] bg-[#102630]"></div>
+        <div className="absolute right-0 w-[50vw] h-[100vh] min-h-[650px] bg-[#0F3B46]"></div>
         <ul className="circles">
           <li></li>
           <li></li>
@@ -35,10 +35,10 @@ export default function Home() {
             <div className="z-[99] border border-gray-200 border-[16px]">
               <Image
                 src="/ralphgif_opt.gif"
-                width={250}
-                height={250}
+                width={350}
+                height={350}
                 alt="Picture of the author"
-                className="z-[99] pt-5 pr-5 pl-5"
+                className="z-[99]"
               />
             </div>
             <ul className="text-white flex items-center lg:items-start flex-col sm:flex-row lg:flex-col items-start gap-4">
