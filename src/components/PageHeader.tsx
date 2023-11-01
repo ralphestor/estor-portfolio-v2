@@ -1,4 +1,10 @@
-const PageHeader = ({ title }) => {
+import React from 'react';
+
+interface PageHeaderProps {
+  title: string;
+}
+
+const PageHeader: React.FC<PageHeaderProps> = ({ title }) => {
   return (
     <header className="w-full h-[150px] md:h-[250px] bg-[#102630] flex justify-center items-center relative">
       <div>
