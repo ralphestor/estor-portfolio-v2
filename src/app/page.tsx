@@ -45,7 +45,7 @@ export default function Home() {
               <li>
                 <a
                   href="/about"
-                  className="text-[16px] lg:text-[34px] xl:text-[50px] tracking-[8px] lg:tracking-[25px] font-black text-shadow homeLink-child pl-[8px] lg:pl-[25px]"
+                  className="text-[16px] lg:text-[34px] xl:text-[50px] tracking-[8px] lg:tracking-[17px] xl:tracking-[25px] font-black text-shadow homeLink-child pl-[8px] lg:pl-[17px] xl:pl-[25px]"
                 >
                   ABOUT
                 </a>
@@ -53,7 +53,7 @@ export default function Home() {
               <li>
                 <a
                   href="/projects"
-                  className="text-[16px] lg:text-[34px] xl:text-[50px] tracking-[8px] lg:tracking-[25px] font-black text-shadow homeLink-child pl-[8px] lg:pl-[25px]"
+                  className="text-[16px] lg:text-[34px] xl:text-[50px] tracking-[8px] lg:tracking-[17px] xl:tracking-[25px] font-black text-shadow homeLink-child pl-[8px] lg:pl-[17px] xl:pl-[25px]"
                 >
                   PROJECTS
                 </a>
@@ -61,7 +61,7 @@ export default function Home() {
               <li>
                 <a
                   href="/connect"
-                  className="text-[16px] lg:text-[34px] xl:text-[50px] pl-[0px] lg:pl-[25px] tracking-[8px] lg:tracking-[25px] font-black text-shadow homeLink-child pl-[8px] lg:pl-[25px]"
+                  className="text-[16px] lg:text-[34px] xl:text-[50px] tracking-[8px] lg:tracking-[17px] xl:tracking-[25px] font-black text-shadow homeLink-child pl-[8px] lg:pl-[17px] xl:pl-[25px]"
                 >
                   CONNECT
                 </a>

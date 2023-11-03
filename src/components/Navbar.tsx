@@ -98,17 +98,17 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="w-full h-[64px] flex justify-center items-center">
-                <Link className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black" href="/about">
+                <Link className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black" href="/about" onClick={() => {setIsOpen(!isOpen)}}>
                   ABOUT
                 </Link>
               </li>
               <li className="w-full h-[64px] flex justify-center items-center">
-                <Link className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black" href="/projects">
+                <Link className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black" href="/projects" onClick={() => {setIsOpen(!isOpen)}}>
                   PROJECTS
                 </Link>
               </li>
               <li className="w-full h-[64px] flex justify-center items-center">
-                <Link className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black" href="/connect">
+                <Link className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black" href="/connect" onClick={() => {setIsOpen(!isOpen)}}>
                   CONNECT
                 </Link>
               </li>

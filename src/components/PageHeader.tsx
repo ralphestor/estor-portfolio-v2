@@ -1,4 +1,8 @@
-import React from 'react';
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import { Icon } from "@iconify/react";
 
 interface PageHeaderProps {
   title: string;
@@ -13,7 +17,15 @@ const PageHeader: React.FC<PageHeaderProps> = ({ title }) => {
         </h1>
       </div>
       <div className="absolute top-[50%] left-[50%] border">
-        <h1 className="absolute text-white font-black text-[28px] md:text-[40px] tracking-[14px] md:tracking-[20px] opacity-[0.1] translate-x-[-50%] translate-y-[-50%] w-fit">{title}</h1>
+        <h1 className="absolute text-white font-black text-[28px] md:text-[40px] tracking-[14px] md:tracking-[20px] opacity-[0.1] translate-x-[-50%] translate-y-[-50%] w-fit">
+          {title}
+        </h1>
+      </div>
+      <div className="fixed top-0 left-0 translate-y-[60px] md:translate-y-[80px]">
+        <Link href="/" className="fixed bg-[#ffffff21] hover:bg-[#ffffff31] transition-all duration-300 ease-in-out pr-5 py-1 rounded-r-full flex justify-center items-center drop-shadow">
+        <Icon icon="tabler:chevron-left" color="white" width="25" />
+          <Icon icon="ion:home" color="white" width="25" height="25" />
+        </Link>
       </div>
     </header>
   );
