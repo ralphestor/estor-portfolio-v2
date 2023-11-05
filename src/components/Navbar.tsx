@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
+import { useRouter } from 'next/navigation'
 import Link from "next/link";
 import Drawer from "react-modern-drawer";
 import { Squash as Hamburger } from "hamburger-react";
@@ -10,12 +11,21 @@ import "react-modern-drawer/dist/index.css";
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const [pageRedirect, setPageRedirect] = useState("/");
   const pathname = usePathname();
+  const router = useRouter();
 
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    setIsOpen(!isOpen)
+    setTimeout(() => {
+        router.push(pageRedirect);
+    }, 750);
+}
 
   const changeBackground = () => {
     if (window.scrollY >= 80) {
@@ -93,22 +103,22 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="w-full h-[64px] flex justify-center items-center">
-                <Link className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black" href="/">
+                <Link className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black" href="/" onClick={handleClick}>
                   HOME
                 </Link>
               </li>
               <li className="w-full h-[64px] flex justify-center items-center">
-                <Link className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black" href="/about" onClick={() => {setIsOpen(!isOpen)}}>
+                <Link className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black" href="/about" onClick={handleClick}>
                   ABOUT
                 </Link>
               </li>
               <li className="w-full h-[64px] flex justify-center items-center">
-                <Link className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black" href="/projects" onClick={() => {setIsOpen(!isOpen)}}>
+                <Link className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black" href="/projects" onClick={handleClick}>
                   PROJECTS
                 </Link>
               </li>
               <li className="w-full h-[64px] flex justify-center items-center">
-                <Link className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black" href="/connect" onClick={() => {setIsOpen(!isOpen)}}>
+                <Link className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black" href="/connect" onClick={handleClick}>
                   CONNECT
                 </Link>
               </li>

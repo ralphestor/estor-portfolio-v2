@@ -1,8 +1,13 @@
 import Image from "next/image";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <main className="w-full h-[100vh] min-h-[650px] px-[10%]">
+      <Head>
+        <title>My page title</title>
+        <meta property="og:title" content="My page title" key="title" />
+      </Head>
       <header className="flex flex-row">
         <div className="absolute left-0 w-[50vw] h-[100vh] min-h-[650px] bg-[#102630]"></div>
         <div className="absolute right-0 w-[50vw] h-[100vh] min-h-[650px] bg-[#0F3B46]"></div>
