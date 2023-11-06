@@ -1,7 +1,39 @@
+"use client";
+
 import Image from "next/image";
 import Head from "next/head";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 export default function Home() {
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+  });
+  const [textRef, textInView] = useInView({
+    threshold: 0.1,
+  });
+
+  const animation = useAnimation();
+  const animationText = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        opacity: 1,
+        transition: {
+          type: "ease",
+          duration: 0.5,
+          delay: 0.5,
+        },
+      });
+    }
+    if (!inView) {
+      animation.start({
+        opacity: 0,
+      });
+    }
+  }, [inView]);
   return (
     <main className="w-full h-[100vh] min-h-[650px] px-[10%]">
       <Head>
