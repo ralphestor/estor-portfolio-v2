@@ -67,9 +67,9 @@ const About = () => {
                 </h1>
               </div>
               <p className="text-white leading-8">
-                Hello, world! I'm Ralph Estor. I'm a dedicated web developer
+                Hello, world! I&apos;m Ralph Estor. I&apos;m a dedicated web developer
                 with a strong passion for programming and committed to showcase
-                my expertise in a professional setting. I'm fully eager to learn
+                my expertise in a professional setting. I&apos;m fully eager to learn
                 various technologies to achieve business objectives. My ultimate
                 motivation is to create outstanding applications that have a
                 positive impact.
