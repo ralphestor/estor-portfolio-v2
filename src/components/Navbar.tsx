@@ -83,7 +83,8 @@ const Navbar = () => {
           <Hamburger color="#0F3B46" toggled={isOpen} toggle={toggleDrawer} size={24} />
         </div>
         <div className="z-[10000]">
-          {/* <Drawer
+          <Drawer
+            key="drawer"
             open={isOpen}
             onClose={toggleDrawer}
             direction="left"
@@ -135,7 +136,7 @@ const Navbar = () => {
                 </Link>
               </li>
             </ul>
-          </Drawer> */}
+          </Drawer>
         </div>
       </div>
     </nav>

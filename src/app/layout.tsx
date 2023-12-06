@@ -3,6 +3,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 
@@ -53,6 +54,7 @@ export default function RootLayout({
               exit={{ scaleY: 0 }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             ></motion.div>
+            <Footer />
           </motion.div>
         </AnimatePresence>
       </body>
