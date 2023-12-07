@@ -10,14 +10,10 @@ import PageHeader from "@/components/PageHeader";
 
 const About = () => {
   const [ref, inView] = useInView({
-    threshold: 0.3,
-  });
-  const [textRef, textInView] = useInView({
-    threshold: 0.3,
+    threshold: 0,
   });
 
   const animation = useAnimation();
-  const animationText = useAnimation();
 
   useEffect(() => {
     if (inView) {
@@ -32,23 +28,15 @@ const About = () => {
     }
   }, [inView]);
 
-  useEffect(() => {
-    if (textInView) {
-      animationText.start({
-        x: 0,
-        opacity: 1,
-        transition: {
-          type: "ease",
-          duration: 0.5,
-          delay: 0.2,
-        },
-      });
-    }
-  }, [textInView]);
   return (
     <main className="flex flex-col justify-start items-center w-full h-full min-h-[100vh] bg-[#0F3B46]">
       <PageHeader title="ABOUT" />
-      <article className="w-[90%] md:w-[80%] xl:w-[900px] py-[50px] flex flex-col gap-20">
+      <motion.article
+        ref={ref}
+        initial={{ opacity: 0 }}
+        animate={animation}
+        className="w-[90%] md:w-[80%] xl:w-[900px] py-[100px] flex flex-col gap-[150px]"
+      >
         <section className="w-full flex flex-col gap-5">
           <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-8">
             <div className="border-[20px] border-[#102630]">
@@ -67,12 +55,12 @@ const About = () => {
                 </h1>
               </div>
               <p className="text-white leading-8">
-                Hello, world! I&apos;m Ralph Estor. I&apos;m a dedicated web developer
-                with a strong passion for programming and committed to showcase
-                my expertise in a professional setting. I&apos;m fully eager to learn
-                various technologies to achieve business objectives. My ultimate
-                motivation is to create outstanding applications that have a
-                positive impact.
+                Hello, world! I&apos;m Ralph Estor. I&apos;m a dedicated web
+                developer with a strong passion for programming and committed to
+                smotion.wcase my expertise in a professional setting. I&apos;m
+                fully eager to learn various technologies to achieve business
+                objectives. My ultimate motivation is to create outstanding
+                applications that have a positive impact.
               </p>
             </div>
           </div>
@@ -113,12 +101,7 @@ const About = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center items-center gap-10">
             <div>
-              <Image
-                src="/honey.png"
-                width={200}
-                height={200}
-                alt="Company"
-              />
+              <Image src="/honey.png" width={200} height={200} alt="Company" />
             </div>
             <div>
               <Image
@@ -129,12 +112,7 @@ const About = () => {
               />
             </div>
             <div>
-              <Image
-                src="/icsi.png"
-                width={150}
-                height={150}
-                alt="Company"
-              />
+              <Image src="/icsi.png" width={150} height={150} alt="Company" />
             </div>
           </div>
         </section>
@@ -234,7 +212,7 @@ const About = () => {
             </Link>
           </div>
         </section>
-      </article>
+      </motion.article>
     </main>
   );
 };

@@ -1,4 +1,9 @@
+"use client";
+
 import Image from "next/image";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 interface ProjectCardProps {
   imageUrl: string;
@@ -21,8 +26,32 @@ const ProjectCard = ({
   githubLink,
   youtubeLink,
 }: ProjectCardProps) => {
+  const [ref, inView] = useInView({
+    threshold: 0.3,
+  });
+
+  const animation = useAnimation();
+  const animationText = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        opacity: 1,
+        transition: {
+          type: "ease",
+          duration: 0.5,
+          delay: 0.7,
+        },
+      });
+    }
+  }, [inView]);
   return (
-    <section className="w-full flex flex-col gap-5">
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0 }}
+      animate={animation}
+      className="w-full flex flex-col gap-5"
+    >
       <div
         className={`w-full flex flex-col lg:${flexDirection} justify-center items-center gap-8`}
       >
@@ -88,7 +117,7 @@ const ProjectCard = ({
           </section>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

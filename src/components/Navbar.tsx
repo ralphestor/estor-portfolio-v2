@@ -2,7 +2,7 @@
 
 import React, { useState, MouseEvent } from "react";
 import { usePathname } from "next/navigation";
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Drawer from "react-modern-drawer";
 import { Squash as Hamburger } from "hamburger-react";
@@ -21,11 +21,11 @@ const Navbar = () => {
 
   const handleClick = (e: MouseEvent) => {
     e.preventDefault();
-    setIsOpen(!isOpen)
+    setIsOpen(!isOpen);
     setTimeout(() => {
-        router.push(pageRedirect);
+      router.push(pageRedirect);
     }, 750);
-}
+  };
 
   const changeBackground = () => {
     if (window.scrollY >= 80) {
@@ -57,22 +57,50 @@ const Navbar = () => {
       </div>
       <ul className="hidden md:flex flex-row gap-4 text-white">
         <li>
-          <Link href="/" className="text-[12px] tracking-[6px] font-black homeLink-child pl-[6px]">
+          <Link
+            href="/"
+            className="text-[12px] tracking-[6px] font-black homeLink-child pl-[6px]"
+            onClick={() => {
+              setPageRedirect("/");
+              handleClick;
+            }}
+          >
             HOME
           </Link>
         </li>
         <li>
-          <Link href="/about" className="text-[12px] tracking-[6px] font-black homeLink-child pl-[6px]">
+          <Link
+            href="/about"
+            className="text-[12px] tracking-[6px] font-black homeLink-child pl-[6px]"
+            onClick={() => {
+              setPageRedirect("/about");
+              handleClick;
+            }}
+          >
             ABOUT
           </Link>
         </li>
         <li>
-          <Link href="/projects" className="text-[12px] tracking-[6px] font-black homeLink-child pl-[6px]">
+          <Link
+            href="/projects"
+            className="text-[12px] tracking-[6px] font-black homeLink-child pl-[6px]"
+            onClick={() => {
+              setPageRedirect("/projects");
+              handleClick;
+            }}
+          >
             PROJECTS
           </Link>
         </li>
         <li>
-          <Link href="/connect" className="text-[12px] tracking-[6px] font-black homeLink-child pl-[6px]">
+          <Link
+            href="/connect"
+            className="text-[12px] tracking-[6px] font-black homeLink-child pl-[6px]"
+            onClick={() => {
+              setPageRedirect("/connect");
+              handleClick;
+            }}
+          >
             CONNECT
           </Link>
         </li>
@@ -80,7 +108,12 @@ const Navbar = () => {
 
       <div className="flex md:hidden">
         <div>
-          <Hamburger color="#0F3B46" toggled={isOpen} toggle={toggleDrawer} size={24} />
+          <Hamburger
+            color="#0F3B46"
+            toggled={isOpen}
+            toggle={toggleDrawer}
+            size={24}
+          />
         </div>
         <div className="z-[10000]">
           <Drawer
@@ -104,34 +137,50 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="w-full h-[64px] flex justify-center items-center">
-                <Link className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black" href="/" onClick={() => {
-                  setPageRedirect("/about");
-                  handleClick;
-                }}>
+                <Link
+                  className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black"
+                  href="/"
+                  onClick={() => {
+                    setPageRedirect("/about");
+                    handleClick;
+                  }}
+                >
                   HOME
                 </Link>
               </li>
               <li className="w-full h-[64px] flex justify-center items-center">
-                <Link className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black" href="/about" onClick={() => {
-                  setPageRedirect("/about");
-                  handleClick;
-                }}>
+                <Link
+                  className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black"
+                  href="/about"
+                  onClick={() => {
+                    setPageRedirect("/about");
+                    handleClick;
+                  }}
+                >
                   ABOUT
                 </Link>
               </li>
               <li className="w-full h-[64px] flex justify-center items-center">
-                <Link className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black" href="/projects" onClick={() => {
-                  setPageRedirect("/projects");
-                  handleClick;
-                }}>
+                <Link
+                  className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black"
+                  href="/projects"
+                  onClick={() => {
+                    setPageRedirect("/projects");
+                    handleClick;
+                  }}
+                >
                   PROJECTS
                 </Link>
               </li>
               <li className="w-full h-[64px] flex justify-center items-center">
-                <Link className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black" href="/connect" onClick={() => {
-                  setPageRedirect("/connect");
-                  handleClick;
-                }}>
+                <Link
+                  className="flex justify-center items-center w-full h-full bg-transparent hover:bg-[#6e6e6e] transition-all ease-in-out duration-300 text-[12px] tracking-[6px] font-black"
+                  href="/connect"
+                  onClick={() => {
+                    setPageRedirect("/connect");
+                    handleClick;
+                  }}
+                >
                   CONNECT
                 </Link>
               </li>

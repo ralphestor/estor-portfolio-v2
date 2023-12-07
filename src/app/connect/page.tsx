@@ -2,15 +2,42 @@
 
 import PageHeader from "@/components/PageHeader";
 import { Icon } from "@iconify/react";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 const Connect = () => {
+  const [ref, inView] = useInView({
+    threshold: 0.3,
+  });
+
+  const animation = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        opacity: 1,
+        transition: {
+          type: "ease",
+          duration: 0.5,
+          delay: 0.2,
+        },
+      });
+    }
+  }, [inView]);
+
   return (
     <main
       className={`flex flex-col justify-start items-center w-full min-h-[calc(100vh-200px)] bg-[#0F3B46]`}
     >
       <PageHeader title="CONNECT" />
       <article className="w-[90%] md:w-[80%] xl:w-[900px] py-[50px] flex justify-center items-center min-h-[calc(100vh-250px)]">
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 w-fit">
+        <motion.section
+          ref={ref}
+          initial={{ opacity: 0 }}
+          animate={animation}
+          className="grid grid-cols-1 md:grid-cols-2 gap-12 w-fit"
+        >
           <div className="flex flex-col justify-center items-center gap-2 w-fit">
             <div>
               <a
@@ -81,7 +108,7 @@ const Connect = () => {
               <h1 className="text-white">View my LinkedIn</h1>
             </div>
           </div>
-        </section>
+        </motion.section>
       </article>
     </main>
   );

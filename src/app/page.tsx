@@ -7,10 +7,13 @@ import { useInView } from "react-intersection-observer";
 
 export default function Home() {
   const [ref, inView] = useInView({
-    threshold: 0.1,
+    threshold: 0.3,
   });
   const [textRef, textInView] = useInView({
-    threshold: 0.1,
+    threshold: 0.3,
+  });
+  const [imageRef, imageInView] = useInView({
+    threshold: 0.3,
   });
 
   const animation = useAnimation();
@@ -23,16 +26,39 @@ export default function Home() {
         transition: {
           type: "ease",
           duration: 0.5,
-          delay: 0.5,
+          delay: 0.7,
         },
       });
     }
-    if (!inView) {
-      animation.start({
-        opacity: 0,
+  }, [inView]);
+
+  useEffect(() => {
+    if (textInView) {
+      animationText.start({
+        x: 0,
+        opacity: 1,
+        transition: {
+          type: "ease",
+          duration: 0.5,
+          delay: 0.8,
+        },
       });
     }
-  }, [inView]);
+  }, [textInView]);
+
+  useEffect(() => {
+    if (imageInView) {
+      animationText.start({
+        scale: 1,
+        transition: {
+          type: "ease",
+          duration: 0.7,
+          delay: 0.2,
+        },
+      });
+    }
+  }, [imageInView]);
+
   return (
     <main className="w-full h-[100vh] min-h-[650px] px-[10%]">
       <header className="flex flex-row">
@@ -51,7 +77,12 @@ export default function Home() {
           <li></li>
         </ul>
         <div className="flex flex-col justify-center items-center home-title text-center w-full z-[100] h-[100vh] min-h-[600px] gap-10">
-          <div className="flex flex-col justify-center items-center">
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0 }}
+            animate={animation}
+            className="flex flex-col justify-center items-center"
+          >
             <div>
               <h1 className="text-shadow text-[20px] sm:text-[30px] lg:text-[50px] xl:text-[70px] text-white font-black tracking-[10px] lg:tracking-[25px] xl:tracking-[35px] pl-[10px] lg:pl-[25px] lg:pl-[35px] z-[100]">
                 RALPH ESTOR
@@ -62,9 +93,14 @@ export default function Home() {
                 WEB DEVELOPER
               </h1>
             </div>
-          </div>
+          </motion.div>
           <div className="flex flex-col-reverse lg:flex-row justify-center items-center gap-4">
-            <div className="z-[99] border border-gray-200 border-[16px]">
+            <motion.div
+              ref={imageRef}
+              initial={{ scale: 0 }}
+              animate={animationText}
+              className="z-[99] border border-gray-200 border-[16px]"
+            >
               <Image
                 src="/ralphgif_opt.gif"
                 width={350}
@@ -72,8 +108,13 @@ export default function Home() {
                 alt="Picture of the author"
                 className="z-[99]"
               />
-            </div>
-            <ul className="text-white flex items-center lg:items-start flex-col sm:flex-row lg:flex-col items-start gap-4">
+            </motion.div>
+            <motion.ul
+              ref={textRef}
+              initial={{ opacity: 0, x: "50px" }}
+              animate={animationText}
+              className="text-white flex items-center lg:items-start flex-col sm:flex-row lg:flex-col items-start gap-4"
+            >
               <li>
                 <a
                   href="/about"
@@ -98,7 +139,7 @@ export default function Home() {
                   CONNECT
                 </a>
               </li>
-            </ul>
+            </motion.ul>
           </div>
         </div>
       </header>
