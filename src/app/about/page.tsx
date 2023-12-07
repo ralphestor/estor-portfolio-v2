@@ -22,7 +22,7 @@ const About = () => {
         transition: {
           type: "ease",
           duration: 0.5,
-          delay: 0.2,
+          delay: 0.7,
         },
       });
     }
@@ -57,7 +57,7 @@ const About = () => {
               <p className="text-white leading-8">
                 Hello, world! I&apos;m Ralph Estor. I&apos;m a dedicated web
                 developer with a strong passion for programming and committed to
-                smotion.wcase my expertise in a professional setting. I&apos;m
+                showcase my expertise in a professional setting. I&apos;m
                 fully eager to learn various technologies to achieve business
                 objectives. My ultimate motivation is to create outstanding
                 applications that have a positive impact.
