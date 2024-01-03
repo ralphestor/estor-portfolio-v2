@@ -40,7 +40,7 @@ const ProjectCard = ({
         transition: {
           type: "ease",
           duration: 0.5,
-          delay: 0.7,
+          delay: 0.3,
         },
       });
     }

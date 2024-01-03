@@ -22,7 +22,7 @@ const About = () => {
         transition: {
           type: "ease",
           duration: 0.5,
-          delay: 0.7,
+          delay: 0.3,
         },
       });
     }
@@ -88,7 +88,7 @@ const About = () => {
                 eventually into a Web Developer. My passion for web development
                 has been consistent since 2018. I have garnered extensive
                 experience in diverse work environments, including large-scale
-                corporation, start-up, and project-based client.
+                corporation, start-up company, and project-based client.
               </p>
             </div>
           </div>
